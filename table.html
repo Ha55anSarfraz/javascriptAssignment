@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tables</title>
+    <style>
+
+        table {
+        border-collapse: collapse;
+        width: 60%;
+        margin: 20px auto;
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+
+    td {
+        border: 2px solid black;
+        padding: 10px;
+        min-width: 80px;
+        cursor: text;
+    }
+
+    td:focus {
+        outline: 2px solid blue; /* highlight when editing */
+        background-color: #f0f8ff;
+    }
+
+    tr:nth-child(even) {
+        background-color: #aa9c9c;
+    }
+
+
+    </style>
+</head>
+<body>
+
+
+    <p>Input numbers of rows:</p>
+    <input id="row" type="number" name="rows" placeholder="Enter rows:">
+    <br>
+    <p>Input numbers of Columns:</p>
+    <input id="col" type="number" name="columns" placeholder="Enter columns:">
+    <br>
+    <br>
+    <button onclick="generatetable()">Generate Table</button>
+  
+    <div id="table"></div>
+
+
+    <script src="tables.js"></script>
+
+</body>
+</html>

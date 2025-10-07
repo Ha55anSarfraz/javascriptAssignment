@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Await</title>
+</head>
+<body>
+    <div>
+        <h1>Welcome to dad jokes</h1>
+         <section class="api_body"></section>
+         <button id="fetchJokes">Get Joke</button>
+    </div>
+
+    <script>
+        const apiBody = document.querySelector(".api_body");
+        const apiURL = "https://icanhazdadjoke.com/";
+
+        async function fetchData() {
+            const res = await fetch(apiURL , {
+                headers: {
+                Accept : "application/json",
+            },
+            });
+            const data = await res.json();
+            console.log(res);
+           apiBody.innerHTML = data.joke;
+        }
+
+        fetchData();
+        document.getElementById("fetchJokes").addEventListener("click" , fetchData);
+
+
+    </script>
+</body>
+</html>

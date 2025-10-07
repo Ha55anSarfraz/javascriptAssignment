@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Objects</title>
+    <style>
+        body
+        {
+            background-color: rgb(0, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        // // 1
+        // function person (obj)  
+        // {
+        // return {
+        //     name: "Omer",
+        //     age: 30,
+        //     address: 
+        //     { 
+        //         street: "123 Main St",
+        //         city: "Anytown",
+        //         zipCode: "12345"
+        //     },
+        //     contact: 
+        //     { 
+        //         email: "Omer@gmail.com",
+        //         phone: "555-1234"
+        //     },
+        //     array: [1,2,3,4,5]}
+        // };
+        // // let cloneObject = {};
+        // // console.log(person);
+        // // cloneObject = {...person};
+        // // console.log(cloneObject);
+        // const deepClone = (obj) =>
+        // {
+        //     let Orignal = obj
+        //     let cloneObject = {...Orignal};
+        //     if (typeof obj !== "object" || obj === null) 
+        //     {
+        //         return obj;
+        //     }
+        //     if (Array.isArray(obj)) 
+        //     {
+        //       return obj.map(item => deepClone(item));
+        //     }
+        //     for(let keys in obj)
+        //     {
+        //         if(Object.hasOwnPrkeysoperty([]))
+        //         {
+        //             cloneObject[keys] = deepClone(obj[keys]);
+        //         }
+        //     }
+        //     cloneObject.city = "Lahore" 
+        //     return {...cloneObject};
+        // }
+        // console.log(person())
+        // console.log(deepClone(person()));
+
+        // //___________________________________________________________________________
+
+        // // 2
+        // const person = 
+        // {
+        //   name: "Ali",
+        //   age: 25,
+        //   city: "Lahore"
+        // };
+        // const job = 
+        // {
+        //   title: "Software Engineer",
+        //   company: "TechCorp",
+        //   salary: 120000
+        // };
+        // const skills = 
+        // {
+        //   programming: ["JavaScript", "Python", "C++"],
+        //   design: ["UI/UX", "Figma"]
+        // };
+        // const contact = 
+        // {
+        //   email: "ali@example.com",
+        //   phone: "123-456-7890"
+        // };
+        // const mergeObj = (... obj) => 
+        // {
+        //     let mergedObject = {};
+        //     mergedObject =  Object.assign({} , ...obj);
+        //     return mergedObject;
+        // }
+        // // console.log(person , job , skills , contact);
+        // console.log(mergeObj(person , job , skills , contact));
+
+        // //___________________________________________________________________________
+
+        // // 3
+        // const person = 
+        // {
+        //     name: "Ali",
+        //     age: 25,
+        //     city: "Lahore",
+        //     title: "Software Engineer",
+        //     company: "TechCorp",
+        //     salary: 120000
+        // };
+        // const changes = 
+        // {
+        //     age: 30,
+        //     city: "Jhelum"
+        // };
+        // const immuUpdate = (obj , changes) => 
+        // {
+        //     return {...obj , ...changes};
+        // }
+        // console.log(person);
+        // console.log(immuUpdate(person , changes));
+
+        // //___________________________________________________________________________
+
+        // // 4
+        // const user = 
+        // {
+        //     id: 101,
+        //     name: "Hassan",
+        //     contact: 
+        //     {
+        //     email: "hassan@example.com",
+        //     phone: "123-456-7890"
+        //     },
+        //     address: 
+        //     {
+        //         street: "123 Main St",
+        //         city: "Lahore",
+        //         country: 
+        //         {
+        //             code: "PK",
+        //             country: "Pakistan"
+        //         }
+        //     },
+        //     preferences: 
+        //     {
+        //         theme: "dark",
+        //         language: 
+        //         {
+        //             primary: "Urdu",
+        //             secondary: "English"
+        //         }
+        //     }
+        // };
+        // // let flatObj = {};
+        // // const traverseThroughNestedObj = (obj) =>
+        // // {
+        // //     for(let keys in obj)
+        // //     {
+        // //         if (typeof obj[keys] === "object" && obj[keys] !== null)
+        // //         {
+        // //             traverseThroughNestedObj(obj[keys]);
+        // //         }
+        // //         else
+        // //         {
+        // //             flatObj[keys] = obj[keys];
+        // //         }
+        // //     }
+        // //     return flatObj;
+        // // }
+        // // let fltObject = traverseThroughNestedObj(user);
+        // // const destObj = (obj) => 
+        // // {
+        // //     let fltObject = traverseThroughNestedObj(obj);
+        // //     for(let keys in fltObject)
+        // //     {
+        // //         let values = fltObject[keys];
+        // //         console.log(`${keys} : ${values}`);
+        // //     }
+        // // }
+
+        // const {id , name ,contact:{email , phone} , address: {street, city  , country: {code ,country}}  , preferences: { theme , language: {primary , secondary}}} = user;
+        // console.log(id);
+
+        // //___________________________________________________________________________
+        
+        // // 5
+        // const user = 
+        // {
+        //     id: 101,
+        //     name: "Hassan",
+        //     contact: "123-456-7890",
+        //     email: "hassan@example.com",
+        //     city: "Lahore",
+        //     country: "Pakistan"
+        // };
+        // const destObj = (obj) => 
+        // {
+        //     const {id , name ,contact } = user;
+        //     console.log(id);
+        //     console.log(name);
+        //     console.log(contact);
+        // }
+        // destObj(user);
+
+        // //___________________________________________________________________________
+
+        // // 6
+        // const students = 
+        // [
+        //     {
+        //         name: "Ali",
+        //         age: 20,
+        //         scores: [85, 90, 78]
+        //     },
+        //     {
+        //         name: "Sara",
+        //         age: 22,
+        //         scores: [88, 76, 95]
+        //     },
+        //     {
+        //         name: "John",
+        //         age: 21,
+        //         scores: [92, 81, 85]
+        //     }
+        // ];
+        // let arr = [];
+        // let [{scores : scores1} , {scores : scores2} , {scores : scores3}] = students;
+        // // let [student1 , student2 , student3] = students;
+        // // let{name : name1} = student1; 
+        // // let{name : name2} = student2;
+        // // let{name : name3} = student3;
+        // // arr.push(name1 , name2 , name3);
+        // // console.log(arr);
+        // console.log([scores1 , scores2 , scores3]);
+
+        // //___________________________________________________________________________
+
+        // 7
+        const user = 
+        {
+            id: 101,
+            name: "Hassan",
+            contact: "123-456-7890",
+            email: "hassan@example.com",
+            city: "Lahore",
+            country: "Pakistan"
+        };
+        const restSpread = (obj) => 
+        {
+            const {id , name ,contact , ...rest} = user;
+            console.log({id , name , contact});
+            console.log(rest);
+        } 
+        restSpread(user);
+
+        // //___________________________________________________________________________
+
+        // // 8
+        // let array1 = [1 , 2 , 8 , 8 , 3 , 2 , 4 , 5 , 6 , 7 , 4 , 9];
+        // let array2 = [13 , 25 , 73 , 44 , 95 , 61 , 79];
+        // let array3 = [1 , 2 , 1 , 8 , 8 , 3 , 2 , 4 , 4 , 9];
+        // const mergeArrayWithSpread = (... array) =>
+        // {
+        //     return [...array.flat()];
+        // }
+        // console.log(mergeArrayWithSpread(array1 , array2, array3));
+
+        // //___________________________________________________________________________
+
+        // // 9
+        //     const user = 
+        //     {
+        //         id: 101,
+        //         name: "Hassan",
+        //         contact: "123-456-7890",
+        //         email: "hassan@example.com",
+        //         city: "Lahore",
+        //         country: "Pakistan"
+        //     };
+        //     const dynamicOPA = (obj , property , value) =>
+        //     {
+        //         let newObj= {...obj};
+        //         newObj[property] = value;
+        //         return newObj;
+        //     }
+        //    console.log(dynamicOPA(user , "ethnicity" , "Punjabi"));
+
+        // //___________________________________________________________________________
+
+        // // 10
+        // const user = 
+        // {
+        //     // id: 101,
+        //     // name: "Hassan",
+        //     contact: 
+        //     {
+        //     email: "hassan@example.com",
+        //     phone: "123-456-7890"
+        //     },
+        //     address:
+        //     {
+        //         street: "123 Main St",
+        //         city: "Lahore",
+        //         country:
+        //         {
+        //             code: "PK",
+        //             country: "Pakistan"
+        //         }
+        //     },
+        //     preferences:
+        //     {
+        //         theme: "dark",
+        //         language:
+        //         {
+        //             primary: "Urdu",
+        //             secondary: "English"
+        //         }
+        //     }
+        // };
+        // const {id = 10  , name = "Name" ,contact:{email , phone} , address: {street, city  , country: {code ,country}}  , preferences: { theme , language: {primary , secondary}}} = user;
+        // console.log(id);
+        // console.log(name);
+
+        // //___________________________________________________________________________
+
+
+    </script>
+</body>
+</html>

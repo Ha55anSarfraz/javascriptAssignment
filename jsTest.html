@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Arrays</title>
+    <style>
+        body
+        {
+            background-color: rgb(0,0,0);
+        }
+    </style>
+</head>
+<body>
+
+    
+    <script>
+
+        // // 1
+        // let array = [13,25,73,44,95,61,79];
+        // const reverseArray = (array) => 
+        // {
+        //     let revArr = [];
+        //     for(let count = array.length-1; count>=0; count--)
+        //     {
+        //         revArr.push(array[count]);
+        //     }
+        //     return revArr;
+        // }
+        // // console.log(reverseArray(array + '').split(','));
+        // console.log(reverseArray(array));
+        // console.log(array.reverse());
+
+        // //_______________________________________________________________________
+
+        // // 2
+        // let nestedArray = [1 , [2, [3, [4]]]];
+        // let flatArr = [];
+        // const traverseThroughNestedArray = (array) =>
+        // {
+        //     for(let count=0; count< array.length; count++)
+        //     {
+        //         if(Array.isArray(array[count]))
+        //         {
+        //             traverseThroughNestedArray(array[count]);
+        //         }
+        //         else
+        //         {
+        //              flatArr.push(array[count]);
+        //         }
+        //     }
+        //     return flatArr;
+        // }
+
+        // console.log(traverseThroughNestedArray(nestedArray));
+
+        // //_______________________________________________________________________
+
+        // // 3
+        // const array = [1 , 2 , 8 , 8 , 3 , 2 , 4 , 5 , 6 , 7 , 4 , 9];
+        // const removeDuplicate = (array) => 
+        // {
+        //     for(let count = 0; count < array.length; count++)
+        //     {
+        //         for(let count1 = count+1; count1 < array.length; count1++)
+        //         {
+        //             if(array[count] === array[count1])
+        //             {
+        //                 array.splice(count1, 1);
+        //                 count1--;
+        //             }
+        //         }
+        //     }
+        //     console.log(array);
+        // }
+        // removeDuplicate(array);
+        // const removeDup = (array) => 
+        // {
+        //     return [... new Set(array)]; //set stores unique vales only
+        // }
+        // console.log(removeDup(array))
+
+        // //_______________________________________________________________________
+
+        // // 4
+        // const array = [1 , 2 , 1 , 8 , 8 , 3 , 2 , 4 , 4 , 9];
+        // let freq = {};
+        // for(let elem of array)
+        // {   
+        //     if(freq[elem]) //dynamic key , determined at runtime
+        //     {
+        //         freq[elem]++;
+        //     }else
+        //     {
+        //         freq[elem] = 1;
+        //     }
+        // } 
+        // for (let key in freq) 
+        // {
+        //     if(freq[key] === 1)
+        //     {
+        //         console.log(key)
+        //         break;
+        //     }
+        // } 
+
+
+        // //_______________________________________________________________________
+
+        // // 5
+        // const array = [17 , 26 , 14 , 88 , 81 , 35 , 23 , 47 , 40 , 99];
+        // // const array = [1 , 2 , 1 , 8 , 8 , 3 , 2 , 4 , 4 , 9];
+        // Array.prototype.myMap = function(funOnArray)
+        // {
+        //     let newArray = [];
+        //     for (let i = 0; i < this.length; i++) 
+        //     {
+        //         newArray.push(funOnArray(this[i], i));
+        //     }
+        //     return newArray; 
+        // }
+        // let mapArray = array.myMap(elem => elem+2);
+        // console.log(mapArray);
+        // // console.log(Array.prototype)
+
+
+        // //_______________________________________________________________________
+
+        // // 6
+        // const array = [17 , 26 , 14 , 88 , 81 , 35 , 23 , 47 , 40 , 99];
+        // const chunkArray = (array , chunkSize) => 
+        // {
+        //     let chunkedArr = [];
+        //     let startIndex = 0;
+        //     while (startIndex < array.length) 
+        //     {
+        //         chunkedArr.push(array.slice(startIndex , startIndex + chunkSize));
+        //         startIndex = startIndex + chunkSize;
+        //         // lastIndex = Math.min(startIndex, array.length)
+        //         // chunkedArr.push(array.slice(startIndex , lastIndex));    
+        //     }
+        //     console.log(chunkedArr);
+        // }        
+        // chunkArray(array , 3);
+
+        // //_______________________________________________________________________
+
+        // // 7
+        // const array1 = [17 , 26 , 26 , 14 , 888 , 81 , 14 ,  35 , 23 , 47 , 40 , 99];
+        // const array2 = [18 , 28 , 164 , 888 , 1081 , 14 , 535 , 77 , 26 , 1947 , 14 , 17];
+        // const commonElem = (arr1 , arr2) => 
+        // {
+        //     let comnElements = [];
+        //     for (let count=0; count<arr1.length; count++) 
+        //     {
+        //         for(let count1=0; count1<arr2.length; count1++)
+        //         {
+        //             if(arr1[count] === arr2[count1])
+        //             {
+        //                 comnElements.push(arr1[count]);
+        //             }
+        //         }
+        //     }return comnElements;
+        // }
+        // const removeDuplicate = (array) => 
+        // {
+        //     for(let count = 0; count < array.length; count++)
+        //     {
+        //         for(let count1 = count+1; count1 < array.length; count1++)
+        //         {
+        //             if(array[count] === array[count1])
+        //             {
+        //                 array.splice(count1, 1);
+        //                 count1--;
+        //             }
+        //         }
+        //     }
+        //     console.log(array);
+        // }
+        // removeDuplicate(commonElem(array1 , array2));
+
+        // //_______________________________________________________________________
+
+        // // 8
+        // const str = ["returns" , "12345678" , "longest" , "87654321" , "inthe" , "the" , "array"];
+        // let firstLongestWord = str[0];
+        // for (let count = 0; count < str.length; count++) 
+        // {
+        //     // console.log(str[count].length);
+        //     if(str[count].length > firstLongestWord.length)
+        //     {
+        //         firstLongestWord = str[count];
+        //     }
+        // }console.log(firstLongestWord);
+
+        // //_______________________________________________________________________
+
+        // // 9
+        // const array = [1 , 2 , 1 , 8 , 8 , 3 , 2 , 4 , 4 , 9];
+        // let freq = {};
+        // for(let elem of array)
+        // {   
+        //     if(freq[elem])
+        //     {
+        //         freq[elem]++;
+        //     }else
+        //     {
+        //         freq[elem] = 1;
+        //     }
+        // } 
+        // console.log(freq);
+
+        // //_______________________________________________________________________
+
+        // // 10
+        // const rotateArr = [1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 0];
+        // const rotateArray = (array , position) => 
+        // {
+        //     let rotatedArray = [];
+        //     console.log(`Orignal array: [${rotateArr}]`);
+        //     // console.log(rotateArr);
+        //     if(position <= array.length)
+        //     {
+        //         for (let count = 0; count < array.length; count++) 
+        //         {
+        //             rotatedArray.push(array.at(count - position))
+        //         }
+        //         return console.log(`Rotated array by position ${position}: [${rotatedArray}]`);
+        //         // return console.log(rotatedArray);
+        //     }
+        //     else
+        //     {
+        //         console.log("position value larger then array")
+        //     }
+        // }
+        // rotateArray(rotateArr , 3);
+
+        // //_______________________________________________________________________
+
+
+
+
+    </script>
+</body>
+</html>
